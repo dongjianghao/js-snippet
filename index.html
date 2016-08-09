@@ -2,92 +2,89 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Examples</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>js-snippet</title>
 </head>
 <body>
 <script>
 
-	// 移动端：判断微信环境
+  // 移动端：判断微信环境
 
-	/**
-	 * [_isWeiXin 判断是否在微信环境中打开]
-	 * @return {Boolean} [返回布尔值]
-	 */
-	function _isWeChat(){
-		var userAgent = window.navigator.userAgent.toLowerCase();
-		return (/MicroMessenger/i).test(userAgent) ? true : false;
-	};
+  /**
+   * [_isWeiXin 判断是否在微信环境中打开]
+   * @return {Boolean} [返回布尔值]
+   */
+  function _isWeChat(){
+    var userAgent = window.navigator.userAgent.toLowerCase();
+    return (/MicroMessenger/i).test(userAgent) ? true : false;
+  };
 
-	// 移动端：判断QQ环境
+  // 移动端：判断QQ环境
 
-	/**
-	 * [_isQQ 判断是否在QQ环境中打开]
-	 * @return {Boolean} [返回布尔值]
-	 */
-	function _isQQ() {
-		var userAgent = window.navigator.userAgent.toLowerCase();
-		return (/qq/i).test(userAgent) ? true : false;
-	};
+  /**
+   * [_isQQ 判断是否在QQ环境中打开]
+   * @return {Boolean} [返回布尔值]
+   */
+  function _isQQ() {
+    var userAgent = window.navigator.userAgent.toLowerCase();
+    return (/qq/i).test(userAgent) ? true : false;
+  };
 
-	// 移动端：判断手机百度
+  // 移动端：判断手机百度
 
-	/**
-	 * [_isMbBadiu 判断是否在手机百度环境中打开]
-	 * @return {Boolean} [返回布尔值]
-	 */
-	function _isMbBadiu() {
-		var userAgent = window.navigator.userAgent.toLowerCase();
-		return (/baiduboxapp/i).test(userAgent) ? true : false;
-	};
+  /**
+   * [_isMbBadiu 判断是否在手机百度环境中打开]
+   * @return {Boolean} [返回布尔值]
+   */
+  function _isMbBadiu() {
+    var userAgent = window.navigator.userAgent.toLowerCase();
+    return (/baiduboxapp/i).test(userAgent) ? true : false;
+  };
 
-	// 获取QueryString中的参数
+  // 获取QueryString中的参数
 
-	/**
-	 * [_getQueryString 获取QueryString中的参数值]
-	 * @param  {[string]} name [需要获取的参数名]
-	 * @return {[string]}      [参数值]
-	 */
-	function _getQueryString(name) {
-		var param = decodeURIComponent(window.location.search),
-		  reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"),
-		  r = reg.exec(param.substr(1));
-		return r == null ? null : unescape(r[2]);
-	};
+  /**
+   * [_getQueryString 获取QueryString中的参数值]
+   * @param  {[string]} name [需要获取的参数名]
+   * @return {[string]}      [参数值]
+   */
+  function _getQueryString(name) {
+    var param = decodeURIComponent(window.location.search),
+      reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"),
+      r = reg.exec(param.substr(1));
+    return r == null ? null : unescape(r[2]);
+  };
 
-	// 移动端：获取竖屏、横屏
+  // 移动端：获取竖屏、横屏
 
-	/**
-	* [isVertical 移动端判断是否竖屏]
-	* @return {Boolean}
-	*/
-	function isVertical() {
-		var _orientation = window.orientation;
-		return _orientation === 180 || _orientation === 0 ? true : false;
-	};
+  /**
+  * [isVertical 移动端判断是否竖屏]
+  * @return {Boolean}
+  */
+  function isVertical() {
+    var _orientation = window.orientation;
+    return _orientation === 180 || _orientation === 0 ? true : false;
+  };
 
-	/**
-	* [isVertical 移动端判断是否横屏]
-	* @return {Boolean}
-	*/
-	function isHorizontal() {
-		var _orientation = window.orientation;
-		return _orientation === 90 || _orientation === -90 ? true : false;
-	}
+  /**
+  * [isVertical 移动端判断是否横屏]
+  * @return {Boolean}
+  */
+  function isHorizontal() {
+    var _orientation = window.orientation;
+    return _orientation === 90 || _orientation === -90 ? true : false;
+  }
 
-	/**
-	* [调用示例]
-	*/
-	window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
-		if(isVertical()) {
-		console.log('竖屏');
-		}
-		if(isHorizontal()) {
-		console.log('横屏');
-		}
-	}, false);
+  /**
+  * [调用示例]
+  */
+  window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
+    if(isVertical()) {
+      console.log('竖屏');
+    }
+    if(isHorizontal()) {
+      console.log('横屏');
+    }
+  }, false);
 </script>
 </body>
 </html>
